@@ -34,6 +34,7 @@ class AuthController {
         {
           email: existingUser.email,
           id: existingUser._id,
+          token,
         },
       );
     } catch (err) {

@@ -9,7 +9,7 @@ const ChannelValidation = {
     next: NextFunction,
   ) {
     const schema = Joi.object({
-      name: Joi.string().min(8).label('Name of Channel').required(),
+      name: Joi.string().min(3).label('Name of Channel').required(),
       description: Joi.string().min(8).label('Description').required(),
     });
     await AppValidation.bodyBaseValidator(schema, request, response, next);

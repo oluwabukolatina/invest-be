@@ -17,7 +17,9 @@ class App {
   public app: express.Application;
 
   public dummyRoutes: DummyRoutes = new DummyRoutes();
+
   public channelRoute: ChannelRoute = new ChannelRoute();
+
   public authRoute: AuthRoute = new AuthRoute();
 
   constructor() {

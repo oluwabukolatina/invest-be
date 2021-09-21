@@ -86,6 +86,7 @@ describe('Auth', () => {
           expect(res.body.message).toEqual('Log in successful');
           expect(res.body.status).toEqual(true);
           expect(res.body.data).toHaveProperty('id');
+          expect(res.body.data).toHaveProperty('token');
           done();
         });
     });

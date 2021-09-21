@@ -31,5 +31,38 @@ class ChannelController {
       return next(error);
     }
   };
+
+  public addMember = async (
+    { user, params }: Request,
+    res: Response,
+    next: NextFunction,
+  ) => {
+    try {
+      const channel = await ChannelService.addMember(params.channelId, {
+        members: user.id,
+      });
+
+      if (!channel._id) {
+        return next(
+          new HttpException(
+            StatusCodes.BAD_REQUEST,
+            message.MESSAGE_UNABLE_TO_ADD_USER_TO_CHANNEL,
+          ),
+        );
+      }
+
+      return ResponseHandler.CreatedResponse(
+        res,
+        message.MESSAGE_USER_ADDED_TO_CHANNEL,
+        {
+          id: channel._id,
+          name: channel.name,
+          description: channel.description,
+        },
+      );
+    } catch (error) {
+      return next(error);
+    }
+  };
 }
 export default ChannelController;

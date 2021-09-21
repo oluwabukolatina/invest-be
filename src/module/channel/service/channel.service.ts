@@ -36,5 +36,13 @@ class ChannelService {
       return e;
     }
   }
+
+  public static async findAll(data: any) {
+    try {
+      return await Model.find(data).populate('members', '-password');
+    } catch (e) {
+      return e;
+    }
+  }
 }
 export default ChannelService;

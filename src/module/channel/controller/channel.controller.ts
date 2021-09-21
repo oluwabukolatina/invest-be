@@ -84,5 +84,26 @@ class ChannelController {
       return next(error);
     }
   };
+
+  public search = async (
+    { query }: Request,
+    res: Response,
+    next: NextFunction,
+  ) => {
+    try {
+      const channels = await ChannelService.findAll({
+        name: RegExp(`^${query.name}$`, 'i'),
+      });
+
+      return ResponseHandler.SuccessResponse(
+        res,
+        StatusCodes.OK,
+        message.MESSAGE_CHANNEL_FETCHED,
+        channels,
+      );
+    } catch (error) {
+      return next(error);
+    }
+  };
 }
 export default ChannelController;

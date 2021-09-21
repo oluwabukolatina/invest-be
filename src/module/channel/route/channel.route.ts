@@ -5,6 +5,7 @@ import ChannelValidation from '../validation/channel.validation';
 import auth from '../../../middleware/auth';
 import UserMiddleware from '../../user/middleware/user.middleware';
 import ChannelMiddleware from '../middleware/channel.middleware';
+import { SEARCH_FOR_CHANNELS_URL } from '../url/channel.url';
 
 class ChannelRoute {
   public channelController: ChannelController = new ChannelController();
@@ -32,6 +33,7 @@ class ChannelRoute {
         ChannelMiddleware.checkIfChannelExists,
         this.channelController.getChannel,
       );
+    app.route(SEARCH_FOR_CHANNELS_URL).get(this.channelController.search);
   };
 }
 export default ChannelRoute;

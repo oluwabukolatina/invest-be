@@ -100,4 +100,22 @@ describe('channel', () => {
     expect(result.body.message).toEqual(message.MESSAGE_CHANNEL_DOES_NOT_EXIST);
     expect(result.body.status).toEqual(false);
   });
+  it('does not fetch channel that does not exist', async () => {
+    const result = await request(app).get(
+      `${url.GET_A_CHANNEL_URL}/6149ca1a1ed0580cea5bf1ee`,
+    );
+    expect(result.status).toEqual(StatusCodes.NOT_FOUND);
+    expect(result.body.message).toEqual(message.MESSAGE_CHANNEL_DOES_NOT_EXIST);
+    expect(result.body.status).toEqual(false);
+  });
+  it('fetches channel and the members there', async () => {
+    const result = await request(app).get(
+      `${url.GET_A_CHANNEL_URL}/${channelId}`,
+    );
+    expect(result.status).toEqual(StatusCodes.OK);
+    expect(result.body.message).toEqual(message.MESSAGE_CHANNEL_FETCHED);
+    expect(result.body.status).toEqual(true);
+    expect(result.body).toHaveProperty('data');
+    expect(result.body.data).toHaveProperty('members');
+  });
 });

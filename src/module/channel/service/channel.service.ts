@@ -16,7 +16,7 @@ class ChannelService {
     name?: IChannel['name'];
   }) {
     try {
-      return await Model.findOne(data);
+      return await Model.findOne(data).populate('members', '-password');
     } catch (e) {
       return e;
     }

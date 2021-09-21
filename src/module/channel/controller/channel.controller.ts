@@ -65,5 +65,24 @@ class ChannelController {
       return next(error);
     }
   };
+
+  public getChannel = async (
+    { params }: Request,
+    res: Response,
+    next: NextFunction,
+  ) => {
+    try {
+      const channel = await ChannelService.findOne({ _id: params.channelId });
+
+      return ResponseHandler.SuccessResponse(
+        res,
+        StatusCodes.OK,
+        message.MESSAGE_CHANNEL_FETCHED,
+        channel,
+      );
+    } catch (error) {
+      return next(error);
+    }
+  };
 }
 export default ChannelController;

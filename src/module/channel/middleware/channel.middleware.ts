@@ -50,13 +50,14 @@ const ChannelMiddleware = {
     }
   },
   async checkIfUserAlreadyBelongsToChannel(
-    { user }: Request,
+    { user, params }: Request,
     res: Response,
     next: NextFunction,
   ) {
     try {
       const channel = await ChannelService.findOne({
         members: user.id,
+        _id: params.channelId,
       });
       if (channel) {
         return next(

@@ -26,6 +26,12 @@ class ChannelRoute {
         ChannelMiddleware.checkIfUserAlreadyBelongsToChannel,
         this.channelController.addMember,
       );
+    app
+      .route(`${url.GET_A_CHANNEL_URL}/:channelId`)
+      .get(
+        ChannelMiddleware.checkIfChannelExists,
+        this.channelController.getChannel,
+      );
   };
 }
 export default ChannelRoute;

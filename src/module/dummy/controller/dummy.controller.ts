@@ -20,7 +20,7 @@ class DummyController {
       await Email.sendEmail(
         DummyEmailHelper.createNewDummyEmail({
           name: dummy.name,
-          email: 'oluwabukolatina@gmail.com',
+          email: 'oluwabukolatinatest@gmail.com',
         }),
       );
       return ResponseHandler.CreatedResponse(res, 'Created', dummy);

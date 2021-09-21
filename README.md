@@ -3,9 +3,9 @@
 ## Getting Started
 >  [Technologies](#technologies-used) &middot; [Testing Tools](#testing-tools) &middot; [Installations](#installations) &middot; [API Endpoints](#api-endpoints) &middot; [Tests](#tests) &middot; [Acknowledgments](#acknowledgments) &middot; [Author](#author)
 ## Heroku App
-Application is deployed on Heroku. Use public URL [https://enigmatic-com](https://enrokuapp.com) with API endpoints.
+Application is deployed on Heroku. Use public URL [https://invest-on-daba.herokuapp.com/](https://invest-on-daba.herokuapp.com/) with API endpoints.
 ## POSTMAN API DOC
-Api documentation generated with [postman](https://documenter.getpostman.com/view/4223397/tenten)
+Api documentation generated with [postman](https://documenter.getpostman.com/view/4223397/UUxuiVcD)
 ## Technologies Used
 - [Node.js](node) A run time environment based off Chrome's v8 Engines for writing Javascript server-side applications.
 - [Express.js](https://expressjs.com) - Web application framework based on Node.js.

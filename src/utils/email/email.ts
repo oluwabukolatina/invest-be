@@ -12,7 +12,7 @@ const Email = {
   async sendWithNodemailer(options: IMailDetails) {
     return transporter.sendMail(options, (err, info) => {
       if (err) {
-        logger.error(err);
+        logger.error('err', err);
       } else {
         logger.info('Mail Sent Successfully', info);
       }

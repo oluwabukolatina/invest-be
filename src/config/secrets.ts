@@ -15,8 +15,20 @@ function throwIfUndefined<T>(secret: T | undefined, name?: string): T {
 }
 export const ENVIRONMENT = throwIfUndefined(process.env.NODE_ENV, 'NODE_ENV');
 
-throwIfUndefined(process.env.STARTER_DATABASE_URL, 'STARTER_DATABASE_URL');
 throwIfUndefined(
-  process.env.STARTER_TEST_DATABASE_URL,
-  'STARTER_TEST_DATABASE_URL',
+  process.env.INVEST_ON_DABA_DEV_DATABASE_URL,
+  'INVEST_ON_DABA_DEV_DATABASE_URL',
+);
+throwIfUndefined(
+  process.env.INVEST_ON_DABA_TEST_DATABASE_URL,
+  'INVEST_ON_DABA_TEST_DATABASE_URL',
+);
+
+export const INVEST_ON_DABA_JWT_SECRET = throwIfUndefined(
+  process.env.INVEST_ON_DABA_JWT_SECRET,
+  'INVEST_ON_DABA_JWT_SECRET',
+);
+export const INVEST_ON_DABA_JWT_EXPIRY = throwIfUndefined(
+  process.env.INVEST_ON_DABA_JWT_EXPIRY,
+  'INVEST_ON_DABA_JWT_EXPIRY',
 );

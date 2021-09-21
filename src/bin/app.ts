@@ -9,6 +9,7 @@ import notFoundMiddleware from '../middleware/not-found.middleware';
 import errorMiddleware from '../middleware/error.middleware';
 import welcomeMessage from '../middleware/welcome.middleware';
 import ChannelRoute from '../module/channel/route/channel.route';
+import AuthRoute from '../module/user/auth/route/auth.route';
 
 dotenv.config();
 
@@ -17,12 +18,14 @@ class App {
 
   public dummyRoutes: DummyRoutes = new DummyRoutes();
   public channelRoute: ChannelRoute = new ChannelRoute();
+  public authRoute: AuthRoute = new AuthRoute();
 
   constructor() {
     this.app = express();
     this.config();
     this.dummyRoutes.routes(this.app);
     this.channelRoute.routes(this.app);
+    this.authRoute.routes(this.app);
     this.app.disable('x-powered-by');
     this.app.get('/', welcomeMessage);
     this.app.use(notFoundMiddleware);

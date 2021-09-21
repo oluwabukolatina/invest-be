@@ -12,5 +12,17 @@ const TestUtils = {
       description: faker.lorem.sentence(3),
     };
   },
+
+  createNewUserData() {
+    return {
+      email: faker.internet.email(),
+      password: `${faker.internet.password(10)}1@Q`,
+    };
+  },
+  getRandomPassword() {
+    return {
+      password: `${faker.internet.password(10)}1@Q`,
+    };
+  },
 };
 export default TestUtils;

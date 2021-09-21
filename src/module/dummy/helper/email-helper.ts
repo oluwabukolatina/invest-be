@@ -7,7 +7,7 @@ const DummyEmailHelper = {
   createNewDummyEmail(options: { name: string; email: string }) {
     const { name } = options;
     return {
-      subject: 'RESET YOUR PASSWORD',
+      subject: 'Welcome to Invest on Daba',
       from: env.emailUsername,
       to: options.email,
       html: EmailTemplatesHelper.generateTemplate(

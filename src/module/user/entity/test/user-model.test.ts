@@ -18,7 +18,7 @@ describe('user model test', () => {
     const findUser = await Model.findOne({
       email: userEmail,
     });
-    expect(findUser?.email).toEqual(userEmail);
+    expect(userEmail).toEqual(findUser?.email);
   });
   it('creates a user', async () => {
     const newUser = TestUtils.createNewUserData();

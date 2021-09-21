@@ -1,11 +1,6 @@
 import faker from 'faker';
 
 const TestUtils = {
-  createNewDummy() {
-    return {
-      name: faker.lorem.words(10),
-    };
-  },
   createNewChannelData() {
     return {
       name: faker.lorem.words(10),
@@ -24,6 +19,11 @@ const TestUtils = {
   },
   getRandomPassword() {
     return `${faker.internet.password(10)}1@Q`;
+  },
+  createNewMessageData() {
+    return {
+      message: faker.lorem.sentence(10),
+    };
   },
 };
 export default TestUtils;

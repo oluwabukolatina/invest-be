@@ -22,7 +22,7 @@ Api documentation generated with [postman](https://documenter.getpostman.com/vie
 - Installing [Node](node) automatically comes with npm.
 
 #### Clone
-- Clone this project to your local machine `https://github.com/oluwabukolatina/invest-daba.git`
+- Clone this project to your local machine `https://github.com/oluwabukolatina/invest-be.git`
 - Update example env file with your own details
 #### Setup
 - Installing the project dependencies

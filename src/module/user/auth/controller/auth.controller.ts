@@ -59,6 +59,7 @@ class AuthController {
       }
       newUser.password = await AuthHelper.hashPassword(newUser.password);
       const saved = await UserService.saveUser(newUser);
+      const token = Jwt.createToken(saved._id, email);
       if (saved) {
         await Email.sendEmail(
           AuthEmailHelper.createWelcomeEmail({ email: saved.email }),
@@ -71,6 +72,7 @@ class AuthController {
             id: saved._id,
             email: saved.email,
             createdAt: saved.createdAt,
+            token,
           },
         );
       }

@@ -32,3 +32,8 @@ export const INVEST_ON_DABA_JWT_EXPIRY = throwIfUndefined(
   process.env.INVEST_ON_DABA_JWT_EXPIRY,
   'INVEST_ON_DABA_JWT_EXPIRY',
 );
+
+throwIfUndefined(
+  process.env.INVEST_ON_DABA_DATABASE_URL,
+  'INVEST_ON_DABA_DATABASE_URL',
+);

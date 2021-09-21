@@ -69,7 +69,7 @@ describe('Auth', () => {
         .post(`${url.LOGIN_URL}`)
         .send({
           email,
-          password: TestUtils.getRandomPassword().password,
+          password: TestUtils.getRandomPassword(),
         })
         .end((err, res) => {
           expect(res.status).toEqual(StatusCodes.BAD_REQUEST);

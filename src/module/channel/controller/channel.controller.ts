@@ -51,8 +51,9 @@ class ChannelController {
         );
       }
 
-      return ResponseHandler.CreatedResponse(
+      return ResponseHandler.SuccessResponse(
         res,
+        StatusCodes.OK,
         message.MESSAGE_USER_ADDED_TO_CHANNEL,
         {
           id: channel._id,

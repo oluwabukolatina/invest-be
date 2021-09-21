@@ -14,6 +14,7 @@ class ChannelRoute {
       .route(url.CREATE_CHANNEL_URL)
       .post(
         ChannelValidation.validateCreateChannel,
+        ChannelMiddleware.checkIfChannelAlreadyExists,
         this.channelController.createChannel,
       );
     app

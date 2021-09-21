@@ -12,6 +12,9 @@ const TestUtils = {
       description: faker.lorem.sentence(3),
     };
   },
+  createRandomChannelDescriptionData() {
+    return faker.lorem.sentence(3);
+  },
 
   createNewUserData() {
     return {
@@ -20,9 +23,7 @@ const TestUtils = {
     };
   },
   getRandomPassword() {
-    return {
-      password: `${faker.internet.password(10)}1@Q`,
-    };
+    return `${faker.internet.password(10)}1@Q`;
   },
 };
 export default TestUtils;

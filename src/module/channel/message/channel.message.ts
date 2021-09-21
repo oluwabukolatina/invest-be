@@ -6,3 +6,4 @@ export const MESSAGE_UNABLE_TO_ADD_USER_TO_CHANNEL =
 export const MESSAGE_USER_ADDED_TO_CHANNEL = 'User added to channel';
 export const MESSAGE_USER_ALREADY_BELONGS_TO_CHANNEL =
   'User already belongs to channel';
+export const MESSAGE_CHANNEL_ALREADY_EXISTS = 'This channel already exists';

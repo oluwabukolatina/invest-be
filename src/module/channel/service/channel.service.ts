@@ -13,6 +13,7 @@ class ChannelService {
   public static async findOne(data: {
     _id?: IChannel['_id'];
     members?: IChannel['members'];
+    name?: IChannel['name'];
   }) {
     try {
       return await Model.findOne(data);

@@ -27,6 +27,28 @@ const ChannelMiddleware = {
       return next(e);
     }
   },
+  async checkIfChannelAlreadyExists(
+    request: Request,
+    res: Response,
+    next: NextFunction,
+  ) {
+    try {
+      const channel = await ChannelService.findOne({
+        name: request.body.name,
+      });
+      if (channel) {
+        return next(
+          new HttpException(
+            StatusCodes.BAD_REQUEST,
+            message.MESSAGE_CHANNEL_ALREADY_EXISTS,
+          ),
+        );
+      }
+      return next();
+    } catch (e) {
+      return next(e);
+    }
+  },
   async checkIfUserAlreadyBelongsToChannel(
     { user }: Request,
     res: Response,

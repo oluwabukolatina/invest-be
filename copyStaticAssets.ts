@@ -1,3 +1,3 @@
 import shell from 'shelljs';
 
-shell.cp('-R', 'src/template/email', 'dist/src/template');
+shell.cp('-R', 'src/utils/email/template', 'dist/src/utils/email/template');
